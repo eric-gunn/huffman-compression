@@ -1,0 +1,136 @@
+\documentclass{article}
+\usepackage{mathtools}
+\usepackage{forest}
+\usepackage{microtype}
+\title{Huffman Compression}
+\author{Eric Gunn}
+\date{}
+\begin{document}
+\def\pgfsysdriver{pgfsys-tex4ht.def}
+\maketitle
+
+\noindent Huffman compression is an interesting way to use space efficiently by reducing the number of bits needed to represent a string of text. For example, take the string \textbf{GOOD BOOKKEEPER} and convert it to its ASCII binary representation:
+	\begin{center}
+		\begin{tabular}{| c | c |}
+			\hline
+			Character & Binary ASCII Representation\\
+			\hline
+			G & 01000111\\
+			O & 01001111\\
+			O & 01001111\\
+			D & 01000100\\
+			  & 00100000\\
+			B & 01000010\\
+			O & 01001111\\
+			O & 01001111\\
+			K & 01001011\\
+			K & 01001011\\
+			E & 01000101\\
+			E & 01000101\\
+			P & 01010000\\
+			E & 01000101\\
+			R & 01010010\\
+			\hline
+		\end{tabular}
+	\end{center}
+\noindent Each binary ASCII value is one byte (8 bits). Since there are 15 total characters in the string (including the space), we know that the string is 120 bits long. Huffman compression works by using fewer bits to represent the most frequent characters in a string. Here is a table of the characters in the string sorted by frequency in descending order:
+	\begin{center}
+		\begin{tabular}{| c | c |}
+			\hline
+			Character & Frequency\\
+			\hline
+			O & 4\\
+			E & 3\\
+			K & 2\\
+			B & 1\\
+			D & 1\\
+			G & 1\\
+			P & 1\\
+			R & 1\\
+			  & 1\\
+			\hline
+		\end{tabular}
+	\end{center}
+\noindent If the frequency table is taken and put it into a tree, with each node being a sum of its children, the following is the result (here, \underline{\hspace{10pt}} is used to represent a space. The character appears on the left with the frequency or sum of frequencies on the right, separated with a colon.): 
+	\begin{center}
+		\begin{forest}
+		for tree={l=2cm}
+			[OEKBDGPR\underline{\hspace{10pt}}:15,for tree=draw,name=one
+				[OEK:9,edge label={node[midway,left]{0}},name=two
+					[$\underbrace{\text{O:4}}_{00}$,l*=3,edge label={node[midway,left]{0}},name=three]
+					[EK:5,l*=2,edge label={node[midway,right]{1}}
+						[$\underbrace{\text{E:3}}_{010}$,edge label={node[midway,left]{0}}]
+						[$\underbrace{\text{K:2}}_{011}$,edge label={node[midway,right]{1}}]
+					]
+				]
+				[BDGPR\underline{\hspace{10pt}}:6,edge label={node[midway,right]{1}}
+					[BD:2,l*=2,edge label={node[midway,left]{0}}
+						[$\underbrace{\text{B:1}}_{100}$,edge label={node[midway,left]{0}}]
+						[$\underbrace{\text{D:1}}_{101}$,edge label={node[midway,right]{1}}]
+					]
+					[GPR\underline{\hspace{10pt}}:4,edge label={node[midway,right]{1}}
+						[GP:2,edge label={node[midway,left]{0}}
+							[$\underbrace{\text{G:1}}_{1100}$,edge label={node[midway,left]{0}}]
+							[$\underbrace{\text{P:1}}_{1101}$,edge label={node[midway,right]{1}}]
+						]
+						[R\underline{\hspace{10pt}}:2,edge label={node[midway,right]{1}}
+							[$\underbrace{\text{R:1}}_{1110}$,edge label={node[midway,left]{0}}]
+							[$\underbrace{\text{\underline{\hspace{10pt}}}:1}_{1111}$,edge label={node[midway,right]{1}}]
+						]
+					]
+				]
+			]
+%		\begin{scope}[>=latex]
+%			\draw [->,dashed] (one) to [out=west,in=north west] (two);
+%			\draw [->,dashed] (two) to [out=west,in=north west] (three);	
+%		\end{scope}
+		\end{forest}
+	\end{center}
+\noindent Each node in the tree is assigned either a 0 if on the left, or a 1 if on the right. By traversing the tree to its leaves (endpoints) it is found that there is a unique path to each leaf, so each character can now assume a new (and smaller) binary representation.
+	\begin{center}
+		\begin{tabular}{| c | c | c |}
+			\hline
+			Character & Frequency & Huffman Compression Representation\\
+			\hline
+			O & 4 & 00\\
+			E & 3 & 010\\
+			K & 2 & 011\\
+			B & 1 & 100\\
+			D & 1 & 101\\
+			G & 1 & 1100\\
+			P & 1 & 1101\\
+			R & 1 & 1110\\
+			  & 1 & 1111\\
+			\hline
+		\end{tabular}
+	\end{center}
+\noindent After the compression process, the string is now 45 bits instead of 120 bits, yielding a 62.5\% reduction in space.
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
