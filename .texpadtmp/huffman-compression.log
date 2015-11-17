@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 NOV 2015 16:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  17 NOV 2015 13:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -407,14 +407,25 @@ Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 \forest@ys=\dimen173
 \forest@externalize@max@outer@n=\count134
 \forest@externalize@inner@n=\count135
-) (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/microtype.sty
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen174
+\pgfdecoratedremainingdistance=\dimen175
+\pgfdecoratedinputsegmentcompleteddistance=\dimen176
+\pgfdecoratedinputsegmentremainingdistance=\dimen177
+\pgf@decorate@distancetomove=\dimen178
+\pgf@decorate@repeatstate=\count136
+\pgfdecorationsegmentamplitude=\dimen179
+\pgfdecorationsegmentlength=\dimen180
+)
+\tikz@lib@dec@box=\box60
+) (/usr/local/texlive/2015/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2013/05/23 v2.5a Micro-typographical refinements (RS)
 \MT@toks=\toks38
-\MT@count=\count136
+\MT@count=\count137
 LaTeX Info: Redefining \textls on input line 766.
-\MT@outer@kern=\dimen174
+\MT@outer@kern=\dimen181
 LaTeX Info: Redefining \textmicrotypecontext on input line 1285.
-\MT@listname@count=\count137
+\MT@listname@count=\count138
  (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2013/05/23 v2.5a Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 915.
@@ -427,30 +438,30 @@ File: microtype.cfg 2013/05/23 v2.5a microtype main configuration file (RS)
 )) (/Users/ericgunn/projects/huffman-compression/.texpadtmp/huffman-compression.aux)
 \openout1 = `huffman-compression.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
  ABD: EveryShipout initializing macros (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count138
-\scratchdimen=\dimen175
-\scratchbox=\box60
-\nofMPsegments=\count139
-\nofMParguments=\count140
+\scratchcounter=\count139
+\scratchdimen=\dimen182
+\scratchbox=\box61
+\nofMPsegments=\count140
+\nofMParguments=\count141
 \everyMPshowfont=\toks39
-\MPscratchCnt=\count141
-\MPscratchDim=\dimen176
-\MPnumerator=\count142
-\makeMPintoPDFobject=\count143
+\MPscratchCnt=\count142
+\MPscratchDim=\dimen183
+\MPnumerator=\count143
+\makeMPintoPDFobject=\count144
 \everyMPtoPDFconversion=\toks40
 ) (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO)
@@ -488,7 +499,7 @@ Package grfext Info: Graphics extension search list:
  (/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-LaTeX Info: Redefining \microtypecontext on input line 8.
+LaTeX Info: Redefining \microtypecontext on input line 9.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -523,15 +534,15 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (
 \forest@temp@box=\box32750 (local)
  [2] (/Users/ericgunn/projects/huffman-compression/.texpadtmp/huffman-compression.aux) ) 
 Here is how much of TeX's memory you used:
- 22313 strings out of 493089
- 520771 string characters out of 6134842
- 550226 words of memory out of 5000000
- 25460 multiletter control sequences out of 15000+600000
+ 22808 strings out of 493089
+ 536376 string characters out of 6134842
+ 564553 words of memory out of 5000000
+ 25942 multiletter control sequences out of 15000+600000
  8717 words of font info for 42 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 107i,17n,126p,844b,3072s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 107i,17n,126p,864b,3204s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb>
-Output written on /Users/ericgunn/projects/huffman-compression/.texpadtmp/huffman-compression.pdf (2 pages, 69849 bytes).
+Output written on /Users/ericgunn/projects/huffman-compression/.texpadtmp/huffman-compression.pdf (2 pages, 70512 bytes).
 PDF statistics:
  38 PDF objects out of 1000 (max. 8388607)
  27 compressed objects within 1 object stream

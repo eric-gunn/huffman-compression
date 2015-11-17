@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{mathtools}
 \usepackage{forest}
+\usetikzlibrary{decorations.pathreplacing}
 \usepackage{microtype}
 \title{Huffman Compression}
 \author{Eric Gunn}
@@ -55,35 +56,39 @@
 	\begin{center}
 		\begin{forest}
 		for tree={l=2cm}
-			[OEKBDGPR\underline{\hspace{10pt}}:15,for tree=draw,name=one
-				[OEK:9,edge label={node[midway,left]{0}},name=two
-					[$\underbrace{\text{O:4}}_{00}$,l*=3,edge label={node[midway,left]{0}},name=three]
-					[EK:5,l*=2,edge label={node[midway,right]{1}}
-						[$\underbrace{\text{E:3}}_{010}$,edge label={node[midway,left]{0}}]
-						[$\underbrace{\text{K:2}}_{011}$,edge label={node[midway,right]{1}}]
+			[OEKBDGPR\underline{\hspace{10pt}}:15,for tree=draw,name=oekbd
+				[OEK:9,edge label={node[midway,left]{0}},name=oek
+					[$\underbrace{\text{O:4}}_{00}$,l*=3,edge label={node[midway,left]{0}},name=o]
+					[EK:5,l*=2,edge label={node[midway,right]{1}},name=ek
+						[$\underbrace{\text{E:3}}_{010}$,edge label={node[midway,left]{0}},name=e]
+						[$\underbrace{\text{K:2}}_{011}$,edge label={node[midway,right]{1}},name=k]
 					]
 				]
-				[BDGPR\underline{\hspace{10pt}}:6,edge label={node[midway,right]{1}}
-					[BD:2,l*=2,edge label={node[midway,left]{0}}
-						[$\underbrace{\text{B:1}}_{100}$,edge label={node[midway,left]{0}}]
-						[$\underbrace{\text{D:1}}_{101}$,edge label={node[midway,right]{1}}]
+				[BDGPR\underline{\hspace{10pt}}:6,edge label={node[midway,right]{1}},name=bdgpr
+					[BD:2,l*=2,edge label={node[midway,left]{0}},name=bd
+						[$\underbrace{\text{B:1}}_{100}$,edge label={node[midway,left]{0}},name=b]
+						[$\underbrace{\text{D:1}}_{101}$,edge label={node[midway,right]{1}},name=d]
 					]
-					[GPR\underline{\hspace{10pt}}:4,edge label={node[midway,right]{1}}
-						[GP:2,edge label={node[midway,left]{0}}
-							[$\underbrace{\text{G:1}}_{1100}$,edge label={node[midway,left]{0}}]
-							[$\underbrace{\text{P:1}}_{1101}$,edge label={node[midway,right]{1}}]
+					[GPR\underline{\hspace{10pt}}:4,edge label={node[midway,right]{1}},name=gpr
+						[GP:2,edge label={node[midway,left]{0}},name=gp
+							[$\underbrace{\text{G:1}}_{1100}$,edge label={node[midway,left]{0}},name=g]
+							[$\underbrace{\text{P:1}}_{1101}$,edge label={node[midway,right]{1}},name=p]
 						]
-						[R\underline{\hspace{10pt}}:2,edge label={node[midway,right]{1}}
-							[$\underbrace{\text{R:1}}_{1110}$,edge label={node[midway,left]{0}}]
-							[$\underbrace{\text{\underline{\hspace{10pt}}}:1}_{1111}$,edge label={node[midway,right]{1}}]
+						[R\underline{\hspace{10pt}}:2,edge label={node[midway,right]{1}},name=rspace
+							[$\underbrace{\text{R:1}}_{1110}$,edge label={node[midway,left]{0}},name=r]
+							[$\underbrace{\text{\underline{\hspace{10pt}}}:1}_{1111}$,edge label={node[midway,right]{1}},name=space]
 						]
 					]
 				]
 			]
-%		\begin{scope}[>=latex]
-%			\draw [->,dashed] (one) to [out=west,in=north west] (two);
-%			\draw [->,dashed] (two) to [out=west,in=north west] (three);	
-%		\end{scope}
+		\begin{scope}[>=latex]
+			\foreach \start/\dest in {oekbd/bdgpr,bdgpr/gpr,gpr/rspace,rspace/space,oek/ek,ek/k,bd/d,gp/p}{
+				\draw [->,dashed] (\start) to [out=south east,in=north] (\dest);
+			}
+			\foreach \start/\dest in {oekbd/oek,oek/o,bdgpr/bd,bd/b,gpr/gp,gp/g,rspace/r}{
+				\draw [->,dashed] (\start) to [out=south west,in=north] (\dest);
+			}
+		\end{scope}
 		\end{forest}
 	\end{center}
 \noindent Each node in the tree is assigned either a 0 if on the left, or a 1 if on the right. By traversing the tree to its leaves (endpoints) it is found that there is a unique path to each leaf, so each character can now assume a new (and smaller) binary representation.
